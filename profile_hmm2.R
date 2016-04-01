@@ -212,7 +212,7 @@ profile_hmm2 <- function(matrixData, dashes) {
         if(dashes[i] >= 3 && i > 1) { #if previous state is insertion
 
           edges = cbind(edges, make_edge("i", lin, "m", i+1, comp_ins_to_mch(insert_mat, matrixData[,i+1])))
-          edges = cbind(edges, make_edge("i", lin, "d", i+1, comp_ins_to_mch(insert_mat, matrixData[,i+1])))
+          edges = cbind(edges, make_edge("i", lin, "d", i+1, comp_del_to_ins(matrixData[,i+1],insert_mat)))
           edges = cbind(edges, make_edge("m", lmn, "m", i+1, comp_mch_ins_mch(matrixData[,lmn],insert_mat, matrixData[,i+1])))
           
           vertices_m = add_vertex(vertices_m, "m", i+1, matrixData[,i+1])

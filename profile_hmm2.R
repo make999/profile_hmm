@@ -230,8 +230,8 @@ profile_hmm2 <- function(matrixData, dashes) {
             edges = cbind(edges, make_edge("d", ldn,"m", i+1, tr_prob))
             edges = cbind(edges, make_edge("d", ldn,"d", i+1, tr_prob))
             
-            lmn = i + 1
-            ldn = lmn
+           # lmn = i + 1
+            #ldn = lmn
         } 
         else if(dashes[i] == 0) {
             edges = cbind(edges, make_edge("m", lmn, "m", i+1, tr_prob))

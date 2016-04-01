@@ -323,4 +323,11 @@ profile_hmm <- function(full_path) {
   res
 }
 
+myplot <- function(res) {
+  b=res[[1]]
+  b = b [1:2,]
+  el = matrix(b, nc=2, byrow=TRUE)
+  plot(graph_from_edgelist(el))
+}
+
 

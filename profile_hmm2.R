@@ -292,3 +292,24 @@ comp_emis_ins_wrapper <- function(vec) {
 }
 
 
+comp_dashes <-function(mat_data) {
+  
+  count_dashes = 1:length(mat_data[1,]);
+  
+  count_dash = 0;
+  for (i in 1:length(mat_data[1,])) {
+    for (el in mat_data[,i]) {
+      
+      if(el == '-') {
+        count_dash = count_dash + 1; 
+      }
+      
+    }
+    count_dashes[i] = count_dash
+    count_dash = 0
+  }
+  
+  count_dashes
+}
+
+

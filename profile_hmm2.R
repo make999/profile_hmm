@@ -89,7 +89,7 @@ comp_mch_ins_mch <- function(vec1, ins_mat, vec2) {
     }
   }
   
-  no_letters
+  no_letters/length(vec1)
 }
 
 
@@ -136,7 +136,7 @@ comp_del_to_ins <- function(vec, insert_mat ) {
         }
       }
   }
-  no_letters
+  no_letters/length(vec)
 }
 
 # Computes the transition probability from 
@@ -162,7 +162,7 @@ comp_mch_to_ins <- function(vec, insert_mat ) {
         }
       }
   }
-  no_letters
+  no_letters/length(vec)
 }
 
 
@@ -310,6 +310,17 @@ comp_dashes <-function(mat_data) {
   }
   
   count_dashes
+}
+
+profile_hmm <- function(full_path) {
+  
+  mydata = read.csv(full_path)
+  mydata1 = cbind(0, mydata)
+  dashes = comp_dashes(mydata1)
+  
+  res = profile_hmm2(mydata1, dashes)
+  
+  res
 }
 
 
